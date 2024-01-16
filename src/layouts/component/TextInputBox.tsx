@@ -5,7 +5,7 @@ import Colors from '../style/Colorss/colors';
 
 interface Props {
     placeholder: string,
-    value: string | number,
+    value: string ,
     onChangeText: (text: string | number) => void;
     multiline:boolean;
     height:number;

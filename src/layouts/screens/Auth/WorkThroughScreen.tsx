@@ -1,5 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React,{FC} from 'react'
 import Button from '../../component/Button';
 import Colors from '../../style/Colorss/colors';
 
@@ -22,7 +22,7 @@ const WorkThroughScreen: FC<Props> = ({navigation}): JSX.Element => {
                 </Text>
 
             </View>
-            <Pressable style={{marginTop: 35,}} onPress={() => navigation.navigate('Login')}>
+            <Pressable style={{marginTop: 35,}} onPress={() => navigation.navigate('LoginScreen')}>
                 <Button title='Login' />
             </Pressable>
 

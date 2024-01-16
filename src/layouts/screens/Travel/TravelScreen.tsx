@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Button from '../../component/Button';
 import DocumentPicker from 'react-native-document-picker'
 
-const Travel: FC<Props> = (): JSX.Element => {
+const TravelScreen: FC = (): JSX.Element => {
 
   const [companyName, setComapnyName] = useState('');
   const [description, setDescription] = useState('');
@@ -145,7 +145,7 @@ const Travel: FC<Props> = (): JSX.Element => {
   )
 }
 
-export default Travel
+export default TravelScreen
 
 const styles = StyleSheet.create({
   container: {

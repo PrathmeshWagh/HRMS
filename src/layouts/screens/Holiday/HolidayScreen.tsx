@@ -5,7 +5,10 @@ import HeaderBar from '../../component/HeaderBar'
 import { Calendar } from 'react-native-calendars'
 import CustomCalendar from '../../component/Calendar'
 
-const Holiday: FC<Props> = (): JSX.Element => {
+interface Props{
+    
+}
+const HolidayScreen: FC<Props> = (): JSX.Element => {
 
     const hodidayeDates = {
         '2024-01-05': { selected: true, selectedColor: Colors.orange },
@@ -52,7 +55,7 @@ const Holiday: FC<Props> = (): JSX.Element => {
     )
 }
 
-export default Holiday
+export default HolidayScreen;
 
 const styles = StyleSheet.create({
     container: {

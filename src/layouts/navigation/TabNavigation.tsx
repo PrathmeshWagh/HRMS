@@ -2,15 +2,16 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import HomeScreen from "../screens/Home/HomeScreen";
 import Colors from "../style/Colorss/colors";
 import { Image } from "react-native";
-import Menu from "../screens/Profile/Menu";
-import Attendance from "../screens/Profile/Attendance";
+import MenuScreen from "../screens/Profile/MenuScreen";
+import AttendanceScreen from "../screens/Profile/AttendanceScreen";
+
 
 const Tab = createBottomTabNavigator()
 
 const TabNavigation = () => {
   return (
     <Tab.Navigator 
-    initialRouteName="Home"
+    initialRouteName="HomeScreen"
     
     screenOptions={{headerShown:false,
       tabBarStyle:{backgroundColor:Colors.brand_primary,flexDirection: 'row', 
@@ -20,7 +21,7 @@ const TabNavigation = () => {
 
     }}
     >
-        <Tab.Screen name='Home' component={HomeScreen} options={{
+        <Tab.Screen name='HomeScreen' component={HomeScreen} options={{
           tabBarLabel:'',
           tabBarIcon:({color}) =>(
             <Image 
@@ -30,7 +31,7 @@ const TabNavigation = () => {
           )
         }}/>
 
-        <Tab.Screen name="Attendance" component={Attendance}
+        <Tab.Screen name="AttendanceScreen" component={AttendanceScreen}
         options={{
           tabBarLabel:'',
           tabBarIcon:({color}) =>(
@@ -41,7 +42,7 @@ const TabNavigation = () => {
           )
         }}
         />
-        <Tab.Screen name="Menu" component={Menu}
+        <Tab.Screen name="MenuScreen" component={MenuScreen}
         options={{
           tabBarLabel:'',
           tabBarIcon:({color}) =>(

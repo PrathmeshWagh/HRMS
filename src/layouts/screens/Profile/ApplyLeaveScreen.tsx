@@ -21,15 +21,15 @@ const dropDownData = [
     { label: 'Item 8', value: '8' },
 ]
 
-const ApplyLeave: FC<Props> = (): JSX.Element => {
+const ApplyLeaveScreen: FC = (): JSX.Element => {
     const [value, setValue] = useState(null);
     const [leaveReason, setLeaveReason] = useState('');
     const [checked, setChecked] = React.useState(false);
     const [isStartDatePickerVisible, setStartDatePickerVisibility] = useState(false);
-    const [startDate, setStartDate] = useState(null);
+    const [startDate, setStartDate] = useState<string | null>(null);
     const [isEndDatePickerVisible, setEndDatePickerVisibility] = useState(false);
-    const [endDate, setEndDate] = useState(null);
-    const [selectedFile, setSelectedFile] = useState(null)
+    const [endDate, setEndDate] = useState<string | null>(null);
+    const [selectedFile, setSelectedFile] = useState<string[] | null>(null)
     const [remark, setRemark] = useState('');
 
     const showStartDatePicker = () => {
@@ -45,12 +45,12 @@ const ApplyLeave: FC<Props> = (): JSX.Element => {
         setEndDatePickerVisibility(false);
     };
 
-    const handleStartDateConfirm = (date) => {
+    const handleStartDateConfirm = (date:string) => {
         setStartDatePickerVisibility(false);
         setStartDate(date);
     };
 
-    const handleEndDateConfirm = (date) => {
+    const handleEndDateConfirm = (date:string) => {
         setEndDatePickerVisibility(false);
         setEndDate(date);
     }
@@ -181,7 +181,7 @@ const ApplyLeave: FC<Props> = (): JSX.Element => {
     )
 }
 
-export default ApplyLeave
+export default ApplyLeaveScreen;
 
 const styles = StyleSheet.create({
     container: {

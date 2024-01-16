@@ -7,11 +7,10 @@ import { useState } from 'react';
 import { Surface } from 'react-native-paper';
 
 
-const WorkingHours: FC = (): JSX.Element => {
+const WorkingHoursScreen: FC = (): JSX.Element => {
     const [selectedDate, setSelectedDate] = useState(new Date());
 
-
-    const formatDate = (date) => {
+    const formatDate = (date:string) => {
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const formattedDate = new Date(date).toLocaleDateString('en-US', options);
 
@@ -87,7 +86,7 @@ const WorkingHours: FC = (): JSX.Element => {
     )
 }
 
-export default WorkingHours
+export default WorkingHoursScreen;
 
 const styles = StyleSheet.create({
     container: {

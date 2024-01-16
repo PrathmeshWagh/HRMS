@@ -20,7 +20,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
 
       <View style={styles.surfaceContainer}>
         <View style={styles.firstRowSurfaceBox}>
-          <Pressable onPress={() => navigation.navigate('Complain')}>
+          <Pressable onPress={() => navigation.navigate('ComplainFormScreen')}>
             <Surface style={styles.presentBox} elevation={2}>
               <View style={styles.fileicon}>
                 <Image source={require('../../img/present.png')} />
@@ -30,7 +30,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
             </Surface>
           </Pressable>
 
-          <Pressable onPress={() => navigation.navigate('Travel1')}>
+          <Pressable onPress={() => navigation.navigate('Travel1Screen')}>
             <Surface style={styles.absentBox} elevation={2}>
               <View style={styles.absenticon}>
                 <Image source={require('../../img/absent.png')} />
@@ -43,7 +43,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
         </View>
 
         <View style={[styles.firstRowSurfaceBox, { marginTop: 20 }]}>
-          <Pressable onPress={() => navigation.navigate('WorkingHours')}>
+          <Pressable onPress={() => navigation.navigate('WorkingHoursScreen')}>
             <Surface style={styles.absentBox} elevation={2}>
               <View style={styles.absenticon}>
                 <Image source={require('../../img/working.png')} />
@@ -54,7 +54,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
           </Pressable>
 
 
-          <Pressable onPress={() => navigation.navigate('AwardForm')}>
+          <Pressable onPress={() => navigation.navigate('AwardFormScreen')}>
             <Surface style={styles.absentBox} elevation={2}>
               <View style={styles.absenticon}>
                 <Image source={require('../../img/award.png')} />
@@ -66,7 +66,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
 
         </View>
 
-        <Pressable style={{ alignItems: 'center', marginTop: 35, }} onPress={() => navigation.navigate('Travel')}>
+        <Pressable style={{ alignItems: 'center', marginTop: 35, }} onPress={() => navigation.navigate('TravelScreen')}>
           <Button title='CLOCK IN' height={50} width={200} />
         </Pressable>
 
@@ -85,8 +85,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    padding: 20,
-
+  
   },
   firstRowSurfaceBox: {
     flexDirection: 'row',
@@ -102,7 +101,8 @@ const styles = StyleSheet.create({
     fontSize: 23
   },
   surfaceContainer: {
-    marginTop: 20
+    marginTop: 20,
+    paddingHorizontal:20
   },
   presentBox: {
     height: 160,

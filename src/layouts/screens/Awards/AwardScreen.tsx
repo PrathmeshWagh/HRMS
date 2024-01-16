@@ -5,7 +5,7 @@ import HeaderBar from '../../component/HeaderBar'
 import { Surface } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Awards: FC<Props> = (): JSX.Element => {
+const AwardScreen: FC<Props> = (): JSX.Element => {
     return (
         <View style={styles.container}>
             <HeaderBar title='AWARD' backButton='chevron-left' />
@@ -28,7 +28,7 @@ const Awards: FC<Props> = (): JSX.Element => {
     )
 }
 
-export default Awards
+export default AwardScreen;
 
 const styles = StyleSheet.create({
     container: {

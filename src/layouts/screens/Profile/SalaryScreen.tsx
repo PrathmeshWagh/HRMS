@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { FC } from 'react'
 import Colors from '../../style/Colorss/colors'
 import HeaderBar from '../../component/HeaderBar'
 import { Surface } from 'react-native-paper';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 
-const Salary = () => {
+const SalaryScreen:FC = ():JSX.Element => {
 
   const earningDetail = [
     { label: 'Total Hours', amount: '56 h' },
@@ -79,7 +79,7 @@ const Salary = () => {
   )
 }
 
-export default Salary
+export default SalaryScreen;
 
 const styles = StyleSheet.create({
   container: {

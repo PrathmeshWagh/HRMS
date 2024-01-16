@@ -4,7 +4,11 @@ import Colors from '../../style/Colorss/colors'
 import HeaderBar from '../../component/HeaderBar';
 import { Avatar } from 'react-native-paper';
 
-const Menu:FC<Props> = ({navigation}):JSX.Element => {
+interface Props{
+  navigation:any
+}
+
+const MenuScreen:FC<Props> = ({navigation}):JSX.Element => {
 
     
   return (
@@ -19,22 +23,22 @@ const Menu:FC<Props> = ({navigation}):JSX.Element => {
       </View>
 
       <View style={[styles.firstContainer,{marginTop:50}]}>
-        <Pressable style={styles.iconandName} onPress={() =>navigation.navigate('Attendance')}>
+        <Pressable style={styles.iconandName} onPress={() =>navigation.navigate('AttendanceScreen')}>
             <Avatar.Icon icon='account-tie'  color={Colors.white} size={35} style={styles.avtariconstyle}/>
             <Text style={styles.textstyle}>Attendance</Text>
         </Pressable>
 
-        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('Leave')}>
+        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('LeaveScreen')}>
             <Avatar.Icon icon='account-arrow-left-outline'  color={Colors.white} size={35} style={styles.avtariconstyle}/>
             <Text style={styles.textstyle}>Leave</Text>
         </Pressable>
 
-        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('Payslip')}>
+        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('PayslipScreen')}>
             <Avatar.Icon icon='credit-card-outline'  color={Colors.white} size={35} style={styles.avtariconstyle}/>
             <Text style={styles.textstyle}>Payroll</Text>
         </Pressable>
 
-        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('Salary')}>
+        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('SalaryScreen')}>
             <Avatar.Icon icon='cash'  color={Colors.white} size={35} style={styles.avtariconstyle}/>
             <Text style={styles.textstyle}>Salary</Text>
         </Pressable>
@@ -42,12 +46,12 @@ const Menu:FC<Props> = ({navigation}):JSX.Element => {
 
       <View style={[styles.firstContainer,{marginTop:20}]}>
         <Text style={styles.accounttext}>ACCOUNT</Text>
-        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('Profile')}>
+        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('ProfileScreen')}>
             <Avatar.Icon icon='account-outline'  color={Colors.white} size={35} style={styles.avtariconstyle}/>
             <Text style={styles.textstyle}>My Profile</Text>
         </Pressable>
 
-        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('Complain')}>
+        <Pressable style={styles.iconandName}  onPress={() =>navigation.navigate('ComplainScreen')}>
             <Avatar.Icon icon='cog'  color={Colors.white} size={35} style={styles.avtariconstyle}/>
             <Text style={styles.textstyle}>Settings</Text>
         </Pressable>
@@ -56,7 +60,7 @@ const Menu:FC<Props> = ({navigation}):JSX.Element => {
   )
 }
 
-export default Menu
+export default MenuScreen;
 
 const styles = StyleSheet.create({
     container:{

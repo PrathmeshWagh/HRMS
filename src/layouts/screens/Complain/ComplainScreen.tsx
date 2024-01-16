@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import React,{FC} from 'react';
 import Colors from '../../style/Colorss/colors';
 import HeaderBar from '../../component/HeaderBar';
 import Button from '../../component/Button';
@@ -10,12 +10,12 @@ interface Props{
   navigation:any
 }
 
-const Complain:FC<Props> = ({navigation}):JSX.Element => {
+const ComplainScreen:FC<Props> = ({navigation}):JSX.Element => {
   return (
     <View style={styles.container}>
       <HeaderBar title='COMPLAIN' backButton='chevron-left' />
       <View style={styles.innerContainer}>
-        <Pressable style={styles.addNewBtnBox} onPress={() => navigation.navigate('Notification') }>
+        <Pressable style={styles.addNewBtnBox} onPress={() => navigation.navigate('NotificationScreen') }>
           <Button title='ADD NEW' width={120} height={33} fontSize={14} />
         </Pressable>
 
@@ -36,7 +36,7 @@ const Complain:FC<Props> = ({navigation}):JSX.Element => {
   )
 }
 
-export default Complain
+export default ComplainScreen;
 
 const styles = StyleSheet.create({
   container: {

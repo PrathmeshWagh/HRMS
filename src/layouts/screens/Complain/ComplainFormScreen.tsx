@@ -7,9 +7,11 @@ import DocumentPicker from 'react-native-document-picker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Button from '../../component/Button';
 
+interface Props{
+  
+}
 
-
-const ComplainForm: FC<Props> = (): JSX.Element => {
+const ComplainFormScreen: FC<Props> = (): JSX.Element => {
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [companyName, setComapnyName] = useState('');
@@ -100,7 +102,7 @@ const ComplainForm: FC<Props> = (): JSX.Element => {
   )
 }
 
-export default ComplainForm
+export default ComplainFormScreen;
 
 const styles = StyleSheet.create({
   container: {

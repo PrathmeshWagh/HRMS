@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import React, { FC } from 'react';
 import Colors from '../../style/Colorss/colors';
 import HeaderBar from '../../component/HeaderBar';
 import CustomCalendar from '../../component/Calendar';
 
-const Attendance = () => {
+const AttendanceScreen:FC = ():JSX.Element => {
 
   const absentDates = {
     '2024-01-05': { selected: true, selectedColor: Colors.orange, },
@@ -29,7 +29,7 @@ const Attendance = () => {
   )
 }
 
-export default Attendance
+export default AttendanceScreen;
 
 const styles = StyleSheet.create({
   container: {

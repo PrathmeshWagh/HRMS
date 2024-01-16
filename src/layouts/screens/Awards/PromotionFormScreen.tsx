@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import Colors from '../../style/Colorss/colors'
-import HeaderBar from '../../component/HeaderBar'
-import FormData from '../../component/AwardFormData'
+import HeaderBar from '../../component/HeaderBar';
+import FormData from '../../component/AwardFormData';
 
-const PromotionForm = () => {
+interface Props{
+    
+}
+const PromotionFormScreen:FC<Props> = ():JSX.Element => {
 
     return (
         <View style={styles.container}>
@@ -20,7 +23,7 @@ const PromotionForm = () => {
     )
 }
 
-export default PromotionForm
+export default PromotionFormScreen
 
 const styles = StyleSheet.create({
     container: {

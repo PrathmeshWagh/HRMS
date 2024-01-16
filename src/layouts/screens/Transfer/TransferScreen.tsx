@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react';
+import React, { FC } from 'react';
 import Colors from '../../style/Colorss/colors';
 import HeaderBar from '../../component/HeaderBar';
 import { Surface } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-const Transfer = () => {
+const TransferScreen:FC = ():JSX.Element => {
   return (
     <View style={styles.container}>
       <HeaderBar title='TRANSFER' backButton='chevron-left' />
@@ -30,7 +30,7 @@ const Transfer = () => {
   )
 }
 
-export default Transfer
+export default TransferScreen;
 
 const styles = StyleSheet.create({
   container: {

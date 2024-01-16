@@ -3,15 +3,26 @@ import { StyleSheet } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import Colors from '../style/Colorss/colors';
 
-// interface Props{
-//     markedDates:string
-// }
+
+interface MarkedDateObject {
+  [date: string]: {
+    marked?: boolean;
+    dotColor?: string;
+    selected?: boolean;
+    selectedColor?: string;
+  };
+}
+
+interface Props{
+    markedDates:MarkedDateObject | undefined;
+}
 
 const CustomCalendar:FC<Props> = ({ markedDates }):JSX.Element => {
   return (
     <Calendar
       style={styles.calendarStyle}
       markedDates={markedDates}
+      markingType='custom'
       
       theme={{
         calendarBackground: Colors.white,
@@ -21,8 +32,15 @@ const CustomCalendar:FC<Props> = ({ markedDates }):JSX.Element => {
         textMonthFontWeight: '400',
         dayTextColor:Colors.black,
         arrowColor:Colors.white,
+        'stylesheet.calendar.header': {
+          dayTextAtIndex0: {
+            color: 'red'
+          },
         
-        
+          
+          
+        }
+
       }}
       headerStyle={{
         backgroundColor: Colors.brand_primary,

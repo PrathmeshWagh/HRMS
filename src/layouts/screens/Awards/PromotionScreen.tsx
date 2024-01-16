@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React,{FC} from 'react'
 import Colors from '../../style/Colorss/colors'
 import HeaderBar from '../../component/HeaderBar'
 import { Surface } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-const Promotion = () => {
+const PromotionScreen:FC<Props> = ():JSX.Element => {
   return (
     <View style={styles.container}>
         <HeaderBar title='PROMOTION' backButton='chevron-left'/>
@@ -26,7 +26,7 @@ const Promotion = () => {
   )
 }
 
-export default Promotion
+export default PromotionScreen
 
 const styles = StyleSheet.create({
     container:{

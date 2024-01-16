@@ -25,7 +25,7 @@ const notification = [
 ]
 
 
-const Notification: FC<Props> = (): JSX.Element => {
+const NotificationScreen: FC= (): JSX.Element => {
     const [searchText, setSeachText] = useState('')
     return (
         <View style={styles.container}>
@@ -81,7 +81,7 @@ const Notification: FC<Props> = (): JSX.Element => {
     )
 }
 
-export default Notification
+export default NotificationScreen
 
 const styles = StyleSheet.create({
     container: {

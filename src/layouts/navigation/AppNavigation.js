@@ -4,54 +4,54 @@ import HomeScreen from '../screens/Home/HomeScreen';
 import LoginScreen from '../screens/Auth/LoginScreen';
 import WorkThroughScreen from '../screens/Auth/WorkThroughScreen';
 import TabNavigation from './TabNavigation';
-import WorkingHours from '../screens/Home/WorkingHours';
-import Profile from '../screens/Profile/Profile';
-import Attendance from '../screens/Profile/Attendance';
-import Leave from '../screens/Profile/Leave';
-import Salary from '../screens/Profile/Salary';
-import Payslip from '../screens/Profile/Payslip';
-import Holiday from '../screens/Holiday/Holiday';
-import Awards from '../screens/Awards/Awards';
-import AwardForm from '../screens/Awards/AwardForm';
-import Travel from '../screens/Travel/Travel';
-import Promotion from '../screens/Awards/Promotion';
-import ApplyLeave from '../screens/Profile/ApplyLeave';
-import Travel1 from '../screens/Travel/Travel1';
-import PromotionForm from '../screens/Awards/PromotionForm';
-import Transfer from '../screens/Transfer/Transfer';
-import TransferForm from '../screens/Transfer/TransferForm';
-import ComplainForm from '../screens/Complain/ComplainForm';
-import Complain from '../screens/Complain/Complain'
-import Notification from '../screens/Notification/Notification';
+import WorkingHoursScreen from '../screens/Home/WorkingHoursScreen';
+import ProfileScreen from '../screens/Profile/ProfileScreen';
+import AttendanceScreen from '../screens/Profile/AttendanceScreen';
+import LeaveScreen from '../screens/Profile/LeaveScreen';
+import SalaryScreen from '../screens/Profile/SalaryScreen';
+import PayslipScreen from '../screens/Profile/PayslipScreen';
+import HolidayScreen from '../screens/Holiday/HolidayScreen';
+import AwardScreen from '../screens/Awards/AwardScreen';
+import AwardFormScreen from '../screens/Awards/AwardFormScreen';
+import TravelScreen from '../screens/Travel/TravelScreen';
+import PromotionScreen from '../screens/Awards/PromotionScreen';
+import ApplyLeaveScreen from '../screens/Profile/ApplyLeaveScreen';
+import Travel1Screen from '../screens/Travel/Travel1Screen';
+import PromotionFormScreen from '../screens/Awards/PromotionFormScreen';
+import TransferScreen from '../screens/Transfer/TransferScreen';
+import TransferFormScreen from '../screens/Transfer/TransferFormScreen';
+import ComplainFormScreen from '../screens/Complain/ComplainFormScreen';
+import ComplainScreen from '../screens/Complain/ComplainScreen'
+import NotificationScreen from '../screens/Notification/NotificationScreen';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigation = () => {
     return (
-        <Stack.Navigator initialRouteName="WorkThrough" screenOptions={{headerShown:false}}>
-            <Stack.Screen name='Home' component={HomeScreen}/>
-            <Stack.Screen name="Login" component={LoginScreen} />
-            <Stack.Screen name='WorkThrough' component={WorkThroughScreen}/>
-            <Stack.Screen name='Profile' component={Profile} />
+        <Stack.Navigator initialRouteName="WorkThroughScreen" screenOptions={{headerShown:false}}>
+            <Stack.Screen name='HomeScreen' component={HomeScreen}/>
+            <Stack.Screen name="LoginScreen" component={LoginScreen} />
+            <Stack.Screen name='WorkThroughScreen' component={WorkThroughScreen}/>
+            <Stack.Screen name='ProfileScreen' component={ProfileScreen} />
             <Stack.Screen name='TabNavigation' component={TabNavigation} />
-            <Stack.Screen name='Attendance' component={Attendance} />
-            <Stack.Screen name='Leave' component={Leave} />
-            <Stack.Screen name='Payslip' component={Payslip}/>
-            <Stack.Screen name='Salary' component={Salary} />
-            <Stack.Screen name='Holiday' component={Holiday} />
-            <Stack.Screen name='Award' component={Awards} />
-            <Stack.Screen name='AwardForm' component={AwardForm} />
-            <Stack.Screen name='Travel' component={Travel}/>
-            <Stack.Screen name='Promotion' component={Promotion} />
-            <Stack.Screen name='WorkingHours' component={WorkingHours} />
-            <Stack.Screen name='ApplyLeave' component={ApplyLeave} />
-            <Stack.Screen name='Travel1' component={Travel1} />
-            <Stack.Screen name='PromotionForm' component={PromotionForm} />
-            <Stack.Screen name='Transfer'  component={Transfer}/>
-            <Stack.Screen name='TransferForm' component={TransferForm} />
-            <Stack.Screen name='ComplainFrom' component={ComplainForm}/>
-            <Stack.Screen name='Complain' component={Complain} />
-            <Stack.Screen name='Notification' component={Notification} />
+            <Stack.Screen name='AttendanceScreen' component={AttendanceScreen} />
+            <Stack.Screen name='LeaveScreen' component={LeaveScreen} />
+            <Stack.Screen name='PayslipScreen' component={PayslipScreen}/>
+            <Stack.Screen name='SalaryScreen' component={SalaryScreen} />
+            <Stack.Screen name='HolidayScreen' component={HolidayScreen} />
+            <Stack.Screen name='AwardScreen' component={AwardScreen} />
+            <Stack.Screen name='AwardFormScreen' component={AwardFormScreen} />
+            <Stack.Screen name='TravelScreen' component={TravelScreen}/>
+            <Stack.Screen name='PromotionScreen' component={PromotionScreen} />
+            <Stack.Screen name='WorkingHoursScreen' component={WorkingHoursScreen} />
+            <Stack.Screen name='ApplyLeaveScreen' component={ApplyLeaveScreen} />
+            <Stack.Screen name='Travel1Screen' component={Travel1Screen} />
+            <Stack.Screen name='PromotionFormScreen' component={PromotionFormScreen} />
+            <Stack.Screen name='TransferScreen'  component={TransferScreen}/>
+            <Stack.Screen name='TransferFormScreen' component={TransferFormScreen} />
+            <Stack.Screen name='ComplainFormScreen' component={ComplainFormScreen}/>
+            <Stack.Screen name='ComplainScreen' component={ComplainScreen} />
+            <Stack.Screen name='NotificationScreen' component={NotificationScreen} />
 
         </Stack.Navigator>
     );

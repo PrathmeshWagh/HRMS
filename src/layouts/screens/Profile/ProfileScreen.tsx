@@ -2,11 +2,10 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { FC, useState } from 'react';
 import HeaderBar from '../../component/HeaderBar';
 import Colors from '../../style/Colorss/colors';
-import { Avatar, Surface, TextInput } from 'react-native-paper';
-import TextInputBox from '../../component/TextInputBox';
+import { Surface, TextInput } from 'react-native-paper';
 import IconLabelTitle from '../../component/IconLabelTitle';
 
-const Profile: FC<Props> = (): JSX.Element => {
+const ProfileScreen: FC= (): JSX.Element => {
 
 
   return (
@@ -80,7 +79,7 @@ const Profile: FC<Props> = (): JSX.Element => {
   )
 }
 
-export default Profile;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {

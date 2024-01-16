@@ -6,7 +6,7 @@ import { Surface } from 'react-native-paper';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 
-const Payslip = () => {
+const PayslipScreen = () => {
     const earningDetail = [
         { label: 'Basic Pay', amount: '$2000.00' },
         { label: 'HRA', amount: '$500.00' },
@@ -83,7 +83,7 @@ const Payslip = () => {
     )
 }
 
-export default Payslip
+export default PayslipScreen;
 
 const styles = StyleSheet.create({
     container: {

@@ -1,9 +1,15 @@
 import { StyleSheet, View } from 'react-native';
-import React from 'react';
+import React,{FC} from 'react';
 import Colors from '../../style/Colorss/colors';
 import HeaderBar from '../../component/HeaderBar';
 import FormData from '../../component/AwardFormData';
-const AwardForm = () => {
+
+interface Props{
+  
+}
+
+
+const AwardFormScreen:FC<Props> = ():JSX.Element => {
   return (
     <View style={styles.container}>
       <HeaderBar title='AWARD' backButton='chevron-left' />
@@ -36,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AwardForm;
+export default AwardFormScreen;

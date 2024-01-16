@@ -10,7 +10,7 @@ interface Props{
   navigation:any
 }
 
-const Leave:FC<Props> = ({navigation}):JSX.Element => {
+const LeaveScreen:FC<Props> = ({navigation}):JSX.Element => {
   const [selectedButton, setSelectedButton] = useState('ALL');
 
   const handleButtonPress = (button: string) => {
@@ -23,7 +23,7 @@ const Leave:FC<Props> = ({navigation}):JSX.Element => {
 
       <View style={styles.textAndIconContainer}>
         <Text style={styles.leaveText}>LEAVES</Text>
-        <Pressable style={styles.plusiconbox} onPress={() =>navigation.navigate('ApplyLeave')}>
+        <Pressable style={styles.plusiconbox} onPress={() =>navigation.navigate('ApplyLeaveScreen')}>
           <Icon name='plus' size={30} color={Colors.white} />
         </Pressable>
       </View>
@@ -69,7 +69,7 @@ const Leave:FC<Props> = ({navigation}):JSX.Element => {
           <Text style={styles.leaveIdText}>ID: 95 259105</Text>
           <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
             <Text style={styles.leaveReasonText}>Going for a Family Trip</Text>
-            <Pressable onPress={() => navigation.navigate('Award')}>
+            <Pressable onPress={() => navigation.navigate('AwardScreen')}>
               <Button title='Approved' backgroundColor={Colors.green} width={100} fontSize={13} />
             </Pressable>
           </View>
@@ -96,7 +96,7 @@ const Leave:FC<Props> = ({navigation}):JSX.Element => {
           <Text style={styles.leaveIdText}>ID: 95 259105</Text>
           <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
             <Text style={styles.leaveReasonText}>Going for a Reception Party</Text>
-            <Pressable onPress={() => navigation.navigate('Holiday')}>
+            <Pressable onPress={() => navigation.navigate('TransferFormScreen')}>
               <Button title='Declined' backgroundColor={Colors.darkRed} width={100} fontSize={13} />
             </Pressable>
           </View>
@@ -117,7 +117,7 @@ const Leave:FC<Props> = ({navigation}):JSX.Element => {
   );
 };
 
-export default Leave;
+export default LeaveScreen;
 
 const styles = StyleSheet.create({
   container: {

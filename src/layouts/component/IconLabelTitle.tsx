@@ -4,14 +4,14 @@ import { Avatar } from 'react-native-paper';
 import Colors from '../style/Colorss/colors';
 
 interface Props{
-    icon:string;
-    label:string;
-    title:string;
-    bottomBorder:boolean
+    icon?:string;
+    label?:string;
+    title?:string;
+    bottomBorder?:boolean
 }
 const IconLabelTitle:FC<Props> = ({icon,label,title,bottomBorder=true}):JSX.Element => {
     return (
-        <View style={[styles.container,{borderBottomWidth:bottomBorder ? 0.5 : null}]}>
+        <View style={[styles.container,{borderBottomWidth:bottomBorder ? 0.5 : 0}]}>
             <Avatar.Icon icon={icon} color={Colors.white} size={35} style={{ backgroundColor: Colors.brand_primary }} />
             <View style={styles.labelTitleBox}>
                 <Text style={styles.labelText}>{label}</Text>

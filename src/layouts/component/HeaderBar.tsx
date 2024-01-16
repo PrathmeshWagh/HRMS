@@ -19,7 +19,7 @@ const HeaderBar:FC<Props>= ({title,backButton}):JSX.Element => {
 
       {backButton && 
       <Pressable onPress={() => navigation.goBack()}>
-        <Icon name={backButton} color={Colors.white} size={35}/>
+        <Icon name={backButton} color={Colors.white} size={35} style={{paddingBottom:20}}/>
       </Pressable>}
 
       <View style={{flex:1, alignItems:'center'}}>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         backgroundColor:Colors.brand_primary,
         alignItems:'center',
         flexDirection:'row',
-        height:150,
+        height:130,
         borderBottomRightRadius:41,
         borderBottomLeftRadius:41,
         paddingHorizontal:10
@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
         color:Colors.white,
         fontSize:24,
         fontFamily:'Poppins',
-        fontWeight:'400'
+        fontWeight:'400',
+        paddingBottom:20
        
 
     }

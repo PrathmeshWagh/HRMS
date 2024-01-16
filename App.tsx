@@ -9,7 +9,7 @@ import { StatusBar } from 'react-native';
 export default function App() {
     return (
         <PaperProvider theme={CombinedDefaultTheme}>
-            <StatusBar barStyle={'light-content'} />
+            <StatusBar barStyle={'dark-content'} />
             <NavigationContainer theme={CombinedDefaultTheme}>
                 <AppNavigation/>
             </NavigationContainer>

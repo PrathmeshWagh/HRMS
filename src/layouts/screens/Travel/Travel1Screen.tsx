@@ -9,12 +9,12 @@ import { Surface } from 'react-native-paper';
 interface Props{
     navigation:any
 }
-const Travel1:FC<Props> = ({navigation}):JSX.Element => {
+const Travel1Screen:FC<Props> = ({navigation}):JSX.Element => {
     return (
         <View style={styles.container}>
             <HeaderBar title='TRAVEL' backButton='chevron-left' />
             <View style={{ paddingHorizontal: 15 }}>
-                <Pressable style={styles.addNewBtnContainer} onPress={() => navigation.navigate('Transfer')}>
+                <Pressable style={styles.addNewBtnContainer} onPress={() => navigation.navigate('TransferScreen')}>
                     <Button title='ADD NEW' width={120} height={35} fontSize={14}/>
                 </Pressable>
 
@@ -35,7 +35,7 @@ const Travel1:FC<Props> = ({navigation}):JSX.Element => {
     )
 }
 
-export default Travel1
+export default Travel1Screen;
 
 const styles = StyleSheet.create({
     container: {
