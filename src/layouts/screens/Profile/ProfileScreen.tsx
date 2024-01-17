@@ -14,11 +14,13 @@ const ProfileScreen: FC= (): JSX.Element => {
       <View style={styles.imgContainer}>
         <Image source={require('../../img/john.png')} style={styles.profileImage} />
       </View>
-      <View style={styles.nameContainer}>
+      <View>
         <Text style={styles.nameText}>JOHN HENDRY</Text>
         <Text style={styles.idText}>ID: 95 259105</Text>
       </View>
-      <ScrollView>
+
+
+      <ScrollView style={{marginTop:50,}}>
         <Surface style={styles.surfaceContainer} elevation={4}>
           <View style={styles.textInputBox}>
            <IconLabelTitle icon={'account'} label={'Username'} title={'John Hendry'}/>
@@ -101,9 +103,6 @@ const styles = StyleSheet.create({
     height: 110,
     alignSelf: 'center'
   },
-  nameContainer: {
-    // alignItems:'center'
-  },
   nameText: {
     color: Colors.brand_primary,
     fontFamily: 'Poppins',
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
     paddingLeft: 160
   },
   surfaceContainer:{
-    marginTop: 40, 
+    marginTop: 20, 
     marginHorizontal: 8, 
     padding: 10, 
     backgroundColor: Colors.white ,

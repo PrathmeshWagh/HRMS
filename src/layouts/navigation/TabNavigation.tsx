@@ -4,6 +4,7 @@ import Colors from "../style/Colorss/colors";
 import { Image } from "react-native";
 import MenuScreen from "../screens/Profile/MenuScreen";
 import AttendanceScreen from "../screens/Profile/AttendanceScreen";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 const Tab = createBottomTabNavigator()
@@ -13,21 +14,24 @@ const TabNavigation = () => {
     <Tab.Navigator 
     initialRouteName="HomeScreen"
     
-    screenOptions={{headerShown:false,
-      tabBarStyle:{backgroundColor:Colors.brand_primary,flexDirection: 'row', 
-      justifyContent: 'center',
-      alignItems: 'center',},
+    screenOptions={{
+      headerShown:false,
+      tabBarStyle:{
+      backgroundColor:Colors.brand_primary,
+      paddingTop:5
+    },
       tabBarActiveTintColor:Colors.white,
 
     }}
     >
-        <Tab.Screen name='HomeScreen' component={HomeScreen} options={{
+        <Tab.Screen 
+        name='HomeScreen' 
+        component={HomeScreen} 
+        options={{
+          
           tabBarLabel:'',
-          tabBarIcon:({color}) =>(
-            <Image 
-            source={require('../img/home.png')}
-            style={{ width: 24, height: 24, tintColor: color}} 
-            />
+          tabBarIcon:({color}) => (
+            <Icon name="home" color={color} size={30}/>
           )
         }}/>
 
@@ -35,10 +39,8 @@ const TabNavigation = () => {
         options={{
           tabBarLabel:'',
           tabBarIcon:({color}) =>(
-            <Image 
-            source={require('../img/Vector.png')}
-            style={{ width: 24, height: 24,tintColor: color  }} 
-            />
+            <Icon name="timetable" color={color} size={30}/>
+            
           )
         }}
         />
@@ -46,10 +48,7 @@ const TabNavigation = () => {
         options={{
           tabBarLabel:'',
           tabBarIcon:({color}) =>(
-            <Image 
-            source={require('../img/user.png')}
-            style={{ width: 24, height: 24, tintColor: color }} 
-            />
+            <Icon name="account" color={color} size={30}/>
           )
         }}
         />

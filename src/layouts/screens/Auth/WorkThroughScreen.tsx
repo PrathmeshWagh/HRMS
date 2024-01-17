@@ -22,8 +22,9 @@ const WorkThroughScreen: FC<Props> = ({navigation}): JSX.Element => {
                 </Text>
 
             </View>
-            <Pressable style={{marginTop: 35,}} onPress={() => navigation.navigate('LoginScreen')}>
-                <Button title='Login' />
+
+            <Pressable style={{marginTop: 35}} onPress={() => navigation.navigate('LoginScreen')}>
+                <Button title='Login'  width={200}/>
             </Pressable>
 
         </View>
