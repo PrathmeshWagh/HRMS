@@ -1,5 +1,5 @@
-import { View, Text,Dimensions } from 'react-native';
-import React, { FC,useState } from 'react';
+import { View, Text, Dimensions } from 'react-native';
+import React, { FC, useState, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { Calendar, CalendarList } from 'react-native-calendars';
 import Colors from '../style/Colorss/colors';
@@ -20,25 +20,45 @@ interface Props {
 }
 
 const CustomCalendar: FC<Props> = ({ markedDates }): JSX.Element => {
+
+
   const [currentMonth, setCurrentMonth] = useState(new Date());
+  
+  const CustomHeader = () => {
 
-  const CustomHeader: FC = () => {
-
-    const month = currentMonth.toLocaleString('en-US', { month: 'long' });
+    
+    const month = new Date(currentMonth).toLocaleString('en-US', { month: 'long' });
     
     return (
       <View style={styles.customHeader}>
-        <Icon name='menu-left' color={Colors.white} size={25} onPress={() => onMonthChange()}/>
+        <Icon name='menu-left' color={Colors.white} size={30}  onPress={onPressArrowLeft}/>
         <Text style={styles.monthText}>{month}</Text>
-        <Icon name='menu-right' color={Colors.white} size={25} onPress={() => onMonthChange()}/>
+        <Icon name='menu-right' color={Colors.white} size={30} onPress={onPressArrowRight}/>
       </View>
     );
-  };
+  }
+
+  const onMonthChange = (date) =>{
   
-  const onMonthChange = (value:number) => {
-    console.log(value)
-    // setCurrentMonth(value)
-  };
+    if (date && date.dateString) {
+      const isoDateString = new Date(date.dateString).toISOString();
+      setCurrentMonth(isoDateString);
+    }
+  }
+
+  const onPressArrowLeft = () =>{
+    const previousMonth = new Date(currentMonth);
+    previousMonth.setMonth(previousMonth.getMonth() - 1);
+    setCurrentMonth(previousMonth);
+  }
+
+  const onPressArrowRight = () =>{
+    const nextMonth = new Date(currentMonth);
+    nextMonth.setMonth(nextMonth.getMonth() + 1);
+    setCurrentMonth(nextMonth);
+  }
+
+  const initialDate = currentMonth.toString();
 
   return (
     <Calendar
@@ -48,21 +68,16 @@ const CustomCalendar: FC<Props> = ({ markedDates }): JSX.Element => {
 
       theme={{
         calendarBackground: Colors.white,
-        monthTextColor: Colors.white,
-        textMonthFontFamily: 'Poppins',
-        textMonthFontSize: 20,
-        textMonthFontWeight: '400',
         dayTextColor: Colors.black,
-        arrowColor: Colors.white,
-        
+
       }}
-      scrollEnabled={true}
-      horizontal={true}
-      
+
       enableSwipeMonths={true}
-      renderHeader={CustomHeader} 
+      renderHeader={CustomHeader}
       onMonthChange={onMonthChange}
-      
+      onPressArrowLeft={onPressArrowLeft}
+      onPressArrowRight={onPressArrowRight}
+      initialDate={initialDate}
 
     />
   );
@@ -77,24 +92,25 @@ const styles = StyleSheet.create({
     marginHorizontal: 15
   },
   customHeader: {
-    flexDirection:'row',
-    justifyContent:'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
     backgroundColor: Colors.brand_primary,
     width: windowWidth,
     paddingVertical: 10,
     alignItems: 'center',
-    marginRight:29,
-    marginLeft:-59,
-    marginTop:-8,
-    flex:1,
-    borderTopRightRadius:10,
-    borderTopLeftRadius:10
+    marginRight: 29,
+    marginLeft: -59,
+    marginTop: -8,
+    flex: 1,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10
   },
   monthText: {
     color: Colors.white,
     fontSize: 20,
     fontFamily: 'Poppins',
-    marginHorizontal:30
+    marginHorizontal: 30,
+    fontWeight:'400'
   },
 });
 
