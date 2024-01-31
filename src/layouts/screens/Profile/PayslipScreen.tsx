@@ -18,7 +18,7 @@ const PayslipScreen = () => {
     return (
         <View style={styles.container}>
             <HeaderBar title='PAYSLIP' backButton='chevron-left' />
-            <ScrollView>
+            <ScrollView showsHorizontalScrollIndicator={false}>
                 <View style={{ marginTop: 30 }}>
                     <Text style={styles.priceText}>$3680.35</Text>
                     <Text style={styles.subpricetext}>Net Pay, Jan 15th-Jan 25th, 2023</Text>
@@ -117,6 +117,8 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.white,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
+        borderTopEndRadius:10,
+        borderTopLeftRadius:10,
         marginBottom: 20
 
     },

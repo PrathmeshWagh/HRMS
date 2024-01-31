@@ -18,7 +18,7 @@ const SalaryScreen: FC = (): JSX.Element => {
   return (
     <View style={styles.container}>
       <HeaderBar title='SALARY' backButton='chevron-left' />
-      <ScrollView>
+      <ScrollView showsHorizontalScrollIndicator={false}>
         <View style={{ marginTop: 30 }}>
           <Text style={styles.priceText}>$3680.35</Text>
 
@@ -54,15 +54,15 @@ const SalaryScreen: FC = (): JSX.Element => {
             <View style={styles.circularBarInnerContainer}>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <View style={{ width: 15, height: 15, backgroundColor: Colors.brand_primary, marginRight: 10 }} />
-                <View style={{ flexDirection: 'row', alignItems: 'center'}}>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                   <Text style={styles.earningBelowText}>Earning</Text>
-                  <Text style={[styles.earningBelowText,{paddingLeft:25}]}>Month</Text>
+                  <Text style={[styles.earningBelowText, { paddingLeft: 25 }]}>Month</Text>
                 </View>
               </View>
 
-              <View style={{ flexDirection: 'row'}}>
+              <View style={{ flexDirection: 'row' }}>
                 <Text style={styles.progessBarEarningText}>$3680.35</Text>
-                <Text style={[styles.progessBarEarningText,{marginLeft:10}]}>Sept</Text>
+                <Text style={[styles.progessBarEarningText, { marginLeft: 10 }]}>Sept</Text>
               </View>
 
 
@@ -118,7 +118,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
-    marginBottom:20
+    borderTopEndRadius: 10,
+    borderTopLeftRadius: 10,
+    marginBottom: 20
 
   },
   detailstextcontainer: {

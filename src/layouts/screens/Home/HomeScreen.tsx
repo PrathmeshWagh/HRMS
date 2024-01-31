@@ -66,7 +66,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
 
         </View>
 
-        <Pressable style={{ alignItems: 'center', marginTop: 35, }} onPress={() => navigation.navigate('TravelScreen')}>
+        <Pressable style={{ alignItems: 'center', marginTop: 35, }}>
           <Button title='CLOCK IN' height={50} width={200} backgroundColor={Colors.green} />
         </Pressable>
 
