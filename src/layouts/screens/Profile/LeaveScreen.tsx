@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React, { FC, useState } from 'react';
 import Colors from '../../style/Colorss/colors';
 import HeaderBar from '../../component/HeaderBar';
@@ -6,11 +6,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Surface } from 'react-native-paper';
 import Button from '../../component/Button';
 
-interface Props{
-  navigation:any
+interface Props {
+  navigation: any
 }
 
-const LeaveScreen:FC<Props> = ({navigation}):JSX.Element => {
+const LeaveScreen: FC<Props> = ({ navigation }): JSX.Element => {
   const [selectedButton, setSelectedButton] = useState('ALL');
 
   const handleButtonPress = (button: string) => {
@@ -23,7 +23,7 @@ const LeaveScreen:FC<Props> = ({navigation}):JSX.Element => {
 
       <View style={styles.textAndIconContainer}>
         <Text style={styles.leaveText}>LEAVES</Text>
-        <Pressable style={styles.plusiconbox} onPress={() =>navigation.navigate('ApplyLeaveScreen')}>
+        <Pressable style={styles.plusiconbox} onPress={() => navigation.navigate('ApplyLeaveScreen')}>
           <Icon name='plus' size={30} color={Colors.white} />
         </Pressable>
       </View>
@@ -64,55 +64,59 @@ const LeaveScreen:FC<Props> = ({navigation}):JSX.Element => {
         <Text style={styles.monthText}>Mar 2023</Text>
       </View>
 
-      <Surface style={styles.surfaceContainer}elevation={2}>
-        <View>
-          <Text style={styles.leaveIdText}>ID: 95 259105</Text>
-          <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
-            <Text style={styles.leaveReasonText}>Going for a Family Trip</Text>
-            <Pressable onPress={() => navigation.navigate('AwardScreen')}>
-              <Button title='Approved' backgroundColor={Colors.green} width={100} fontSize={13} />
-            </Pressable>
-          </View>
-
-          <Text style={[styles.leaveFromText,{marginVertical:10}]}>Casual Leave</Text>
-
-          <View style={styles.calendarIconAndText}> 
-            <View style={{flexDirection:'row', alignItems:'center'}}>
-              <Icon name='calendar-month-outline' color={Colors.black} size={20} />
-              <Text style={styles.leaveFromText}>Leave From</Text>
+      <ScrollView showsHorizontalScrollIndicator={false}>
+        <Surface style={styles.surfaceContainer} elevation={2}>
+          <View>
+            <Text style={styles.leaveIdText}>ID: 95 259105</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Text style={styles.leaveReasonText}>Going for a Family Trip</Text>
+              <Pressable onPress={() => navigation.navigate('AwardScreen')}>
+                <Button title='Approved' backgroundColor={Colors.green} width={100} fontSize={13} />
+              </Pressable>
             </View>
-           <Text style={styles.leaveFromText}>20th Mar to 29th Mar</Text>
-          </View>
 
-        </View>
-      </Surface>
+            <Text style={[styles.leaveFromText, { marginVertical: 10 }]}>Casual Leave</Text>
 
-      <View style={{ marginLeft: 10, marginTop: 20 }}>
-        <Text style={styles.monthText}>Feb 2023</Text>
-      </View>
-
-      <Surface style={styles.surfaceContainer}elevation={2}>
-        <View>
-          <Text style={styles.leaveIdText}>ID: 95 259105</Text>
-          <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
-            <Text style={styles.leaveReasonText}>Going for a Reception Party</Text>
-            <Pressable onPress={() => navigation.navigate('TransferFormScreen')}>
-              <Button title='Declined' backgroundColor={Colors.darkRed} width={100} fontSize={13} />
-            </Pressable>
-          </View>
-
-          <Text style={[styles.leaveFromText,{marginVertical:10}]}>Casual Leave</Text>
-
-          <View style={styles.calendarIconAndText}> 
-            <View style={{flexDirection:'row', alignItems:'center'}}>
-              <Icon name='calendar-month-outline' color={Colors.black} size={20} />
-              <Text style={styles.leaveFromText}>Leave Date</Text>
+            <View style={styles.calendarIconAndText}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Icon name='calendar-month-outline' color={Colors.black} size={20} />
+                <Text style={styles.leaveFromText}>Leave From</Text>
+              </View>
+              <Text style={styles.leaveFromText}>20th Mar to 29th Mar</Text>
             </View>
-           <Text style={styles.leaveFromText}>29 Feb</Text>
-          </View>
 
+          </View>
+        </Surface>
+
+        <View style={{ marginLeft: 10, marginTop: 20 }}>
+          <Text style={styles.monthText}>Feb 2023</Text>
         </View>
-      </Surface>
+
+        <Surface style={[styles.surfaceContainer,{marginBottom:20}]} elevation={2}>
+          <View>
+            <Text style={styles.leaveIdText}>ID: 95 259105</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Text style={styles.leaveReasonText}>Going for a Reception Party</Text>
+              <Pressable onPress={() => navigation.navigate('TransferFormScreen')}>
+                <Button title='Declined' backgroundColor={Colors.darkRed} width={100} fontSize={13} />
+              </Pressable>
+            </View>
+
+            <Text style={[styles.leaveFromText, { marginVertical: 10 }]}>Casual Leave</Text>
+
+            <View style={styles.calendarIconAndText}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Icon name='calendar-month-outline' color={Colors.black} size={20} />
+                <Text style={styles.leaveFromText}>Leave Date</Text>
+              </View>
+              <Text style={styles.leaveFromText}>29 Feb</Text>
+            </View>
+
+          </View>
+        </Surface>
+      </ScrollView>
+
+
     </View>
   );
 };
@@ -167,37 +171,37 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins',
     fontSize: 12
   },
-  surfaceContainer:{
-    backgroundColor:Colors.white,
-    marginHorizontal:10,
-    borderRadius:8,
-    marginTop:10,
-    padding:10
+  surfaceContainer: {
+    backgroundColor: Colors.white,
+    marginHorizontal: 10,
+    borderRadius: 8,
+    marginTop: 10,
+    padding: 10
   },
-  calendarIconAndText:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
+  calendarIconAndText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
 
   },
-  
-  leaveFromText:{
-    paddingLeft:10,
-    fontFamily:'Poppins',
-    fontSize:11,
-    fontWeight:'400',
-    color:Colors.text_secondary
+
+  leaveFromText: {
+    paddingLeft: 10,
+    fontFamily: 'Poppins',
+    fontSize: 11,
+    fontWeight: '400',
+    color: Colors.text_secondary
   },
-  leaveReasonText:{
-    fontFamily:'Poppins',
-    fontWeight:'400',
-    fontSize:15,
-    color:Colors.customDarkGray
+  leaveReasonText: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+    fontSize: 15,
+    color: Colors.customDarkGray
   },
-  leaveIdText:{
-    fontFamily:'Poppins',
-    fontWeight:'400',
-    fontSize:20,
-    color:Colors.brand_primary
+  leaveIdText: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+    fontSize: 20,
+    color: Colors.brand_primary
   }
 });

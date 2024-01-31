@@ -50,13 +50,21 @@ const PayslipScreen = () => {
 
                         <View style={styles.circularBarInnerContainer}>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                <View style={{ width: 15, height: 15, backgroundColor: Colors.brand_primary, marginRight: 10 }} />
-                                <Text style={styles.earningBelowText}>Earning</Text>
+                                <View style={[styles.emptyView,{backgroundColor:Colors.brand_primary}]} />
+
+                                <View style={{flex:1, flexDirection: 'row', alignItems: 'center'}}>
+                                    <Text style={styles.earningBelowText}>Earning</Text>
+                                    <Text style={[styles.earningBelowText,{paddingLeft:20}]}>Month</Text>
+                                </View>
                             </View>
-                            <Text style={styles.progessBarEarningText}>$3680.35</Text>
+
+                            <View style={{ flexDirection: 'row'}}>
+                                <Text style={styles.progessBarEarningText}>$3680.35</Text>
+                                <Text style={[styles.progessBarEarningText,{marginLeft:10}]}>Jan</Text>
+                            </View>
 
                             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
-                                <View style={{ width: 15, height: 15, backgroundColor: Colors.screen_bgDark, marginRight: 10 }} />
+                                <View style={styles.emptyView} />
                                 <Text style={styles.earningBelowText}>Tax & Deduction</Text>
                             </View>
                             <Text style={styles.progessBarEarningText}>$1000.00</Text>
@@ -109,7 +117,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.white,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
-        marginBottom:20
+        marginBottom: 20
 
     },
     detailstextcontainer: {
@@ -130,7 +138,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingVertical: 20,
-        paddingHorizontal: 20
+        paddingHorizontal: 10
     },
     progressbarText: {
         fontFamily: 'Poppins',
@@ -145,15 +153,20 @@ const styles = StyleSheet.create({
         color: Colors.DimGray
     },
     circularBarInnerContainer: {
-        marginLeft: 20,
-
+        marginLeft: 15,
     },
     progessBarEarningText: {
         fontFamily: 'Poppins',
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: '400',
         color: Colors.DimGray,
         marginLeft: 23
+    },
+    emptyView:{
+        width: 15, 
+        height: 15, 
+        backgroundColor: Colors.screen_bgDark, 
+        marginRight: 10
     },
     earningBelowText: {
         fontFamily: 'Poppins',

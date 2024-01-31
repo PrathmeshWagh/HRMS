@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View,useWindowDimensions } from 'react-native'
 import React, { useState } from 'react';
 import { TextInput } from 'react-native-paper';
 import Colors from '../../style/Colorss/colors';
@@ -9,6 +9,7 @@ interface Props {
 }
 
 const LoginScreen: React.FC<Props> = ({ navigation }): JSX.Element => {
+  const {width,height} = useWindowDimensions()
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,7 +17,8 @@ const LoginScreen: React.FC<Props> = ({ navigation }): JSX.Element => {
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
-        <Text style={styles.headerText}>Welcome To <Text style={{ color: '#213F7B' }}>HRMS</Text></Text>
+          <Image source={require('../../img/loginLogo.png')} resizeMode='contain' style={{width:width, height:height/6.5,marginBottom:20}} />
+        <Text style={styles.headerText}>Login</Text>
         <TextInput
           label='Username'
           value={username}
@@ -34,8 +36,8 @@ const LoginScreen: React.FC<Props> = ({ navigation }): JSX.Element => {
           mode='outlined'
           activeOutlineColor={Colors.brand_primary}
         />
-        <Pressable style={{marginTop: 35}} onPress={() => navigation.navigate('TabNavigation')}>
-          <Button title='LOGIN'/>
+        <Pressable style={{ marginTop: 35 }} onPress={() => navigation.navigate('TabNavigation')}>
+          <Button title='LOGIN' />
         </Pressable>
       </View>
     </View>
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 20,
     borderRadius: 7,
-    backgroundColor:Colors.white
-    
+    backgroundColor: Colors.white
+
   },
 })

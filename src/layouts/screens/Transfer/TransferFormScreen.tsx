@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { FC } from 'react'
 import HeaderBar from '../../component/HeaderBar';
 import Colors from '../../style/Colorss/colors';
@@ -9,7 +9,7 @@ const TransferFormScreen:FC = ():JSX.Element => {
     <View style={styles.container}>
       <HeaderBar title='TRANSFER'  backButton='chevron-left'/>
       
-      <View style={styles.innerContainer}>
+      <ScrollView style={styles.innerContainer}>
         <FormData label="Company Name" value="ABC Company Pvt Ltd" />
         <FormData label="Transfer from" value="India" />
         <FormData label="Transfer To" value="Singapore" />
@@ -17,7 +17,7 @@ const TransferFormScreen:FC = ():JSX.Element => {
         <FormData label="Location Name" value="Singapore" />
         <FormData label="Department" value="Manager" />
 
-      </View>
+      </ScrollView>
     </View>
   )
 }
@@ -33,9 +33,10 @@ const styles = StyleSheet.create({
     backgroundColor:Colors.silverGray,
     marginVertical:20,
     paddingHorizontal:15,
-    paddingVertical:10,
     marginHorizontal:10,
-    borderRadius:10
+    borderRadius:10,
+    
+
 
   }
 })

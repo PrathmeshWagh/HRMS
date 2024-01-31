@@ -43,38 +43,6 @@ const ProfileScreen: FC= (): JSX.Element => {
             <IconLabelTitle icon={'calendar'} label={'Date Of Birth'} title={'10/02/1993'} bottomBorder={false}/>
           </View>
         </Surface>
-
-
-        <View style={styles.socialContainer}>
-          <Text style={styles.socialtext}>Social Links</Text>
-
-          <View style={styles.linkBox}>
-            <Text style={styles.linkText}>Facebook</Text>
-          </View>
-
-          
-          <View style={styles.linkBox}>
-            <Text style={styles.linkText}>Twitter</Text>
-          </View>
-
-          <View style={styles.linkBox}>
-            <Text style={styles.linkText}>Linkeldn</Text>
-          </View>
-
-          <View style={styles.linkBox}>
-            <Text style={styles.linkText}>Instagram</Text>
-          </View>
-
-          <View style={styles.linkBox}>
-            <Text style={styles.linkText}>Pinterest</Text>
-          </View>
-
-          <View style={styles.linkBox}>
-            <Text style={styles.linkText}>Tumbir</Text>
-          </View>
-
-         
-        </View>
       </ScrollView>
 
     </View>
@@ -122,7 +90,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 8, 
     padding: 10, 
     backgroundColor: Colors.white ,
-    borderRadius:8
+    borderRadius:8,
+    marginBottom:20
   },
   iconBox: {
     marginRight: 10

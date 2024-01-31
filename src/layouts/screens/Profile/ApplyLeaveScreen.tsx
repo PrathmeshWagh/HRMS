@@ -45,34 +45,34 @@ const ApplyLeaveScreen: FC = (): JSX.Element => {
         setEndDatePickerVisibility(false);
     };
 
-    const handleStartDateConfirm = (date:string) => {
+    const handleStartDateConfirm = (date: string) => {
         setStartDatePickerVisibility(false);
         setStartDate(date);
     };
 
-    const handleEndDateConfirm = (date:string) => {
+    const handleEndDateConfirm = (date: string) => {
         setEndDatePickerVisibility(false);
         setEndDate(date);
     }
 
     const selectDocument = async () => {
         try {
-          const result = await DocumentPicker.pick({
-            type: [DocumentPicker.types.allFiles],
-          });
-          setSelectedFile(result)
+            const result = await DocumentPicker.pick({
+                type: [DocumentPicker.types.allFiles],
+            });
+            setSelectedFile(result)
         } catch (error) {
-          if (DocumentPicker.isCancel(error)) {
-            console.log('userCancel Image')
-          } else {
-            console.log('error', error)
-          }
+            if (DocumentPicker.isCancel(error)) {
+                console.log('userCancel Image')
+            } else {
+                console.log('error', error)
+            }
         }
-      }
+    }
     return (
         <View style={styles.container}>
             <HeaderBar title='APPLY LEAVE' backButton='chevron-left' />
-            <ScrollView style={{ paddingHorizontal: 20 }}>
+            <ScrollView style={{ marginHorizontal: 15 }}>
                 <Text style={styles.newLeaveText}>NEW LEAVE</Text>
                 <Text style={styles.leaveTypeText}>Leave Type</Text>
 
@@ -145,25 +145,29 @@ const ApplyLeaveScreen: FC = (): JSX.Element => {
                     />
                 </View>
 
-                <View style={{ marginTop:20 }}>
+                <View style={{ marginTop: 20 }}>
                     <Text>Attachment</Text>
-                    <Pressable style={styles.uploadContainer} onPress={() => selectDocument()}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={styles.chooseyourfilebox}>
-                                <Text numberOfLines={1}
-                                    ellipsizeMode="tail" style={styles.filenameText}>{selectedFile ? selectedFile[0].name : 'Choose Your File'}</Text>
+                    <View style={{flexDirection:'row',alignItems:'center'}}>
+                        <Pressable style={styles.uploadContainer} onPress={() => selectDocument()}>
+                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <View style={styles.chooseyourfilebox}>
+                                    <Text numberOfLines={1}
+                                        ellipsizeMode="tail" style={styles.filenameText}>{selectedFile ? selectedFile[0].name : 'Choose Your File'}</Text>
+                                </View>
+                                <View style={styles.uploadIconBox}>
+                                    <Icon name='upload-outline' color={Colors.white} size={25} />
+                                </View>
                             </View>
-                            <View style={styles.uploadIconBox}>
-                                <Icon name='upload-outline' color={Colors.white} size={25} />
-                            </View>
-                        </View>
+                        </Pressable>
                         <Text style={styles.nofilechossenText}>{!selectedFile && 'No File Chosen'}</Text>
-                    </Pressable>
+
+
+                    </View>
 
                     <Text style={styles.uploadFileFormatText}>Upload Files Only: pdf, gif, png, jpg, jpeg</Text>
                 </View>
 
-                <Text style={[styles.leaveReasonText,{marginTop:5}]}>Remark</Text>
+                <Text style={[styles.leaveReasonText, { marginTop: 5 }]}>Remark</Text>
                 <TextInputBox
                     placeholder='Remark'
                     value={remark}
@@ -173,7 +177,7 @@ const ApplyLeaveScreen: FC = (): JSX.Element => {
                 />
 
                 <Pressable onPress={() => null} style={styles.applyBtnContainer}>
-                    <Button  title='APPLY' width={150}/>
+                    <Button title='APPLY' width={150} />
                 </Pressable>
 
             </ScrollView>
@@ -193,7 +197,7 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         fontSize: 24,
         color: Colors.brand_primary,
-        marginTop:10
+        marginTop: 10
     },
     leaveTypeText: {
         marginTop: 20,
@@ -271,38 +275,39 @@ const styles = StyleSheet.create({
         color: Colors.darkGray
     },
     uploadContainer: {
-        flexDirection: 'row',
         height: 55,
         width: 200,
         borderRadius: 8,
         backgroundColor: Colors.white,
-        alignItems: 'center',
+        justifyContent:'center',
         marginTop: 5,
-        elevation:4
-      },
-      chooseyourfilebox: {
+        elevation: 4,
+        marginLeft: 5,
+
+    },
+    chooseyourfilebox: {
         paddingVertical: 5,
         width: 140,
         backgroundColor: '#939393',
         borderRadius: 5,
         marginLeft: 10,
         alignItems: 'center',
-      },
-      uploadFileFormatText: {
+    },
+    uploadFileFormatText: {
         marginTop: 20,
         fontFamily: 'Poppins',
         fontWeight: '400',
         fontSize: 12,
         color: Colors.customDarkGray
-      },
-      nofilechossenText: {
+    },
+    nofilechossenText: {
         fontFamily: 'Poppins',
         fontWeight: '400',
         fontSize: 12,
         color: Colors.customDarkGray,
-        marginLeft: 40
-      },
-      uploadIconBox: {
+        marginLeft: 20
+    },
+    uploadIconBox: {
         height: 35,
         width: 35,
         borderRadius: 17,
@@ -310,15 +315,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: 10
-      },
-      filenameText: {
+    },
+    filenameText: {
         fontFamily: 'Poppins',
         fontSize: 12,
         fontWeight: '400',
         color: Colors.darkGray,
-      },
-      applyBtnContainer:{
-        alignItems:'center',
-        justifyContent:'center'
-      }
+    },
+    applyBtnContainer: {
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 })

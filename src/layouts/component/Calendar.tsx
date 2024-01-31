@@ -21,8 +21,8 @@ interface Props {
 
 const CustomCalendar: FC<Props> = ({ markedDates }): JSX.Element => {
 
-
   const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [selected, setSelected] = useState('');
   
   const CustomHeader = () => {
 
@@ -63,21 +63,30 @@ const CustomCalendar: FC<Props> = ({ markedDates }): JSX.Element => {
   return (
     <Calendar
       style={styles.calendarStyle}
-      markedDates={markedDates}
+      // markedDates={markedDates}
       markingType='custom'
+      onDayPress={day => {
+        setSelected(day.dateString);
+      }}
+      markedDates={{
+        ...markedDates,
+        [selected]: {selected: true, disableTouchEvent: true,}
+      }}
 
       theme={{
         calendarBackground: Colors.white,
         dayTextColor: Colors.black,
+        selectedDayBackgroundColor: Colors.brand_primary,
+        selectedDayTextColor: Colors.white,
 
       }}
-
       enableSwipeMonths={true}
       renderHeader={CustomHeader}
       onMonthChange={onMonthChange}
       onPressArrowLeft={onPressArrowLeft}
       onPressArrowRight={onPressArrowRight}
       initialDate={initialDate}
+      
 
     />
   );

@@ -15,7 +15,7 @@ const WorkThroughScreen: FC<Props> = ({navigation}): JSX.Element => {
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.optimizeText}>
-                    Optimize <Text style={{ color: Colors.brand_primary }}>Workers</Text>
+                    Optimize <Text style={{ color: Colors.brand_primary }}>Employee</Text>
                 </Text>
                 <Text style={styles.subText}>
                     HR Management made easily organize{'\n'}your daily working routine easily

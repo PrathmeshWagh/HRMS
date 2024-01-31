@@ -7,6 +7,7 @@ import TabNavigation from './TabNavigation';
 import WorkingHoursScreen from '../screens/Home/WorkingHoursScreen';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 import AttendanceScreen from '../screens/Profile/AttendanceScreen';
+import MyAttendanceScreen from '../screens/Profile/MyAttendanceScreen';
 import LeaveScreen from '../screens/Profile/LeaveScreen';
 import SalaryScreen from '../screens/Profile/SalaryScreen';
 import PayslipScreen from '../screens/Profile/PayslipScreen';
@@ -23,6 +24,8 @@ import TransferFormScreen from '../screens/Transfer/TransferFormScreen';
 import ComplainFormScreen from '../screens/Complain/ComplainFormScreen';
 import ComplainScreen from '../screens/Complain/ComplainScreen'
 import NotificationScreen from '../screens/Notification/NotificationScreen';
+import SettingScreen from '../screens/Profile/SettingScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +38,7 @@ const AppNavigation = () => {
             <Stack.Screen name='ProfileScreen' component={ProfileScreen} />
             <Stack.Screen name='TabNavigation' component={TabNavigation} />
             <Stack.Screen name='AttendanceScreen' component={AttendanceScreen} />
+            <Stack.Screen name='MyAttendanceScreen' component={MyAttendanceScreen} />
             <Stack.Screen name='LeaveScreen' component={LeaveScreen} />
             <Stack.Screen name='PayslipScreen' component={PayslipScreen}/>
             <Stack.Screen name='SalaryScreen' component={SalaryScreen} />
@@ -52,7 +56,7 @@ const AppNavigation = () => {
             <Stack.Screen name='ComplainFormScreen' component={ComplainFormScreen}/>
             <Stack.Screen name='ComplainScreen' component={ComplainScreen} />
             <Stack.Screen name='NotificationScreen' component={NotificationScreen} />
-
+            <Stack.Screen name='SettingScreen' component={SettingScreen} />
         </Stack.Navigator>
     );
 };

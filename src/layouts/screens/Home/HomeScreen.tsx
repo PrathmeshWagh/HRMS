@@ -20,7 +20,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
 
       <View style={styles.surfaceContainer}>
         <View style={styles.firstRowSurfaceBox}>
-          <Pressable onPress={() => navigation.navigate('ComplainFormScreen')}>
+          <Pressable>
             <Surface style={styles.presentBox} elevation={2}>
               <View style={styles.fileicon}>
                 <Image source={require('../../img/present.png')} />
@@ -30,7 +30,7 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
             </Surface>
           </Pressable>
 
-          <Pressable onPress={() => navigation.navigate('Travel1Screen')}>
+          <Pressable>
             <Surface style={styles.absentBox} elevation={2}>
               <View style={styles.absenticon}>
                 <Image source={require('../../img/absent.png')} />
@@ -43,31 +43,31 @@ const HomeScreen: FC<Props> = ({ navigation }): JSX.Element => {
         </View>
 
         <View style={[styles.firstRowSurfaceBox, { marginTop: 20 }]}>
-          <Pressable onPress={() => navigation.navigate('WorkingHoursScreen')}>
+          <Pressable>
             <Surface style={styles.absentBox} elevation={2}>
               <View style={styles.absenticon}>
                 <Image source={require('../../img/working.png')} />
               </View>
-              <Text style={styles.absentdaystext}>580 Hours</Text>
-              <Text style={styles.absentText}>Working</Text>
+              <Text style={styles.absentdaystext}>580</Text>
+              <Text style={styles.absentText}>PayRoll</Text>
             </Surface>
           </Pressable>
 
 
-          <Pressable onPress={() => navigation.navigate('AwardFormScreen')}>
+          {/* <Pressable> */}
             <Surface style={styles.absentBox} elevation={2}>
               <View style={styles.absenticon}>
                 <Image source={require('../../img/award.png')} />
               </View>
               <Text style={styles.absentdaystext} >2</Text>
-              <Text style={styles.absentText}>Awards</Text>
+              <Text style={styles.absentText}>Leave</Text>
             </Surface>
-          </Pressable>
+          {/* </Pressable> */}
 
         </View>
 
         <Pressable style={{ alignItems: 'center', marginTop: 35, }} onPress={() => navigation.navigate('TravelScreen')}>
-          <Button title='CLOCK IN' height={50} width={200} />
+          <Button title='CLOCK IN' height={50} width={200} backgroundColor={Colors.green} />
         </Pressable>
 
         <View style={styles.clockContainer}>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-  
+
   },
   firstRowSurfaceBox: {
     flexDirection: 'row',
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   surfaceContainer: {
     marginTop: 20,
-    paddingHorizontal:20
+    paddingHorizontal: 15
   },
   presentBox: {
     height: 160,

@@ -30,7 +30,7 @@ const NotificationScreen: FC= (): JSX.Element => {
     return (
         <View style={styles.container}>
             <HeaderBar title='NOTIFICATION' backButton='chevron-left' />
-            <View style={styles.innerContainer}>
+            <ScrollView style={styles.innerContainer}>
                 <View style={styles.textInputAndIconContainer}>
                     <TextInput 
                     placeholder='Search Notification'
@@ -76,7 +76,7 @@ const NotificationScreen: FC= (): JSX.Element => {
 
                 </View>
 
-            </View>
+            </ScrollView>
         </View>
     )
 }
@@ -89,9 +89,11 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.white
     },
     innerContainer: {
+        flex:1,
         paddingHorizontal: 20,
-        paddingVertical: 20,
-        flex:1
+        marginTop:20
+        
+      
     },
     textInputAndIconContainer:{
         flexDirection:'row',

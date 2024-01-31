@@ -17,10 +17,7 @@ const AttendanceScreen:FC = ():JSX.Element => {
       <HeaderBar
         title='MONTHLY ATTENDANCE'
       />
-      <View style={styles.daysTextContainer}>
-        <Text style={styles.presenttext}>24 DAYS PRESENT</Text>
-        <Text style={styles.absentText}>3 DAYS ABSENT</Text>
-      </View>
+      
 
       <View style={styles.calendarContainer}>
           <CustomCalendar markedDates={absentDates}/>
